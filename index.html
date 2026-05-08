@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AEyes — One walk. Every room. Zero doubt.</title>
+  <meta name="description" content="AI-powered inspection for luxury vacation rentals. Clip on your GoPro, walk the property, and get a complete report before you leave."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Tenor+Sans&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:#080604;color:#F0EAE0;font-family:'DM Mono',monospace;overflow-x:hidden;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-bottom:0.5px solid #2A2218;position:sticky;top:0;z-index:100;background:#080604;}
+    .logo{display:flex;align-items:center;gap:10px;}
+    .logo-mark{width:30px;height:30px;border-radius:6px;background:#C8A96E;display:flex;align-items:center;justify-content:center;}
+    .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F0EAE0;letter-spacing:0.08em;}
+    .nav-links{display:flex;gap:32px;align-items:center;}
+    .nav-links a{font-size:11px;color:#6B5E4E;letter-spacing:0.06em;text-decoration:none;transition:color 0.2s;cursor:pointer;}
+    .nav-links a:hover{color:#C8A96E;}
+    .nav-cta{background:transparent;border:0.5px solid #C8A96E;color:#C8A96E;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:8px 18px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .nav-cta:hover{background:#C8A96E;color:#080604;}
+    .hero{padding:90px 48px 80px;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;max-width:1200px;}
+    .hero-eyebrow{font-size:10px;color:#C8A96E;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+    .hero-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#C8A96E;}
+    .hero-headline{margin-bottom:28px;}
+    .hl{display:block;font-family:'Tenor Sans',sans-serif;font-size:42px;line-height:1.08;letter-spacing:-0.01em;}
+    .hl-white{color:#F0EAE0;}
+    .hl-gold{color:#C8A96E;}
+    .hero-body{font-size:12px;color:#6B5E4E;line-height:1.9;margin-bottom:32px;max-width:400px;}
+    .hero-actions{display:flex;gap:12px;align-items:center;}
+    .btn-primary{background:#C8A96E;color:#080604;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:12px 24px;border-radius:3px;cursor:pointer;border:none;transition:opacity 0.2s;}
+    .btn-primary:hover{opacity:0.85;}
+    .btn-ghost{background:transparent;border:0.5px solid #2A2218;color:#6B5E4E;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:12px 24px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .btn-ghost:hover{border-color:#6B5E4E;color:#F0EAE0;}
+    .hero-stat{display:flex;gap:32px;margin-top:44px;padding-top:32px;border-top:0.5px solid #1A1410;}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#C8A96E;}
+    .stat-label{font-size:10px;color:#4A3E30;letter-spacing:0.05em;margin-top:2px;}
+    .live-panel{background:#0D0B08;border:0.5px solid #2A2218;border-radius:10px;padding:20px;}
+    .panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:0.5px solid #1A1410;}
+    .panel-title{font-size:10px;color:#6B5E4E;letter-spacing:0.06em;}
+    .panel-live{display:flex;align-items:center;gap:6px;font-size:10px;color:#C8A96E;}
+    .live-dot{width:6px;height:6px;border-radius:50%;background:#C8A96E;animation:pulse 1.8s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+    .room-list{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+    .room-row{display:flex;justify-content:space-between;align-items:center;padding:8px 11px;background:#080604;border-radius:4px;border:0.5px solid #1A1410;}
+    .room-name{font-size:12px;color:#C8BEA8;}
+    .room-badge{font-size:10px;padding:2px 8px;border-radius:99px;letter-spacing:0.03em;}
+    .b-clear{background:#0D1F10;color:#4A9E60;border:0.5px solid #1A3820;}
+    .b-flag{background:#2A1008;color:#E8804A;border:0.5px solid #3A1808;}
+    .b-check{background:#1A160A;color:#C8A96E;border:0.5px solid #2A2210;}
+    .b-pending{background:#0D0B08;color:#3A3028;border:0.5px solid #1A1410;}
+    .panel-flag{background:#140C06;border:0.5px solid #3A1808;border-radius:6px;padding:11px 13px;margin-bottom:12px;}
+    .flag-label{font-size:10px;color:#E8804A;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;}
+    .flag-desc{font-size:11px;color:#8B7060;line-height:1.5;}
+    .flag-actions{display:flex;gap:8px;margin-top:10px;}
+    .flag-btn{font-size:10px;font-family:'DM Mono',monospace;padding:5px 12px;border-radius:3px;cursor:pointer;border:none;letter-spacing:0.03em;}
+    .fb-fix{background:#C8A96E;color:#080604;}
+    .fb-push{background:transparent;border:0.5px solid #3A1808;color:#E8804A;cursor:pointer;}
+    .progress-meta{display:flex;justify-content:space-between;margin-bottom:6px;}
+    .progress-label{font-size:10px;color:#4A3E30;}
+    .progress-count{font-size:10px;color:#C8A96E;}
+    .progress-bar{height:2px;background:#1A1410;border-radius:1px;}
+    .progress-fill{height:100%;width:55%;background:#C8A96E;border-radius:1px;}
+    .section{padding:72px 48px;border-top:0.5px solid #1A1410;}
+    .section-eyebrow{font-size:10px;color:#C8A96E;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:10px;}
+    .section-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#C8A96E;}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1A1410;border:0.5px solid #1A1410;border-radius:8px;overflow:hidden;}
+    .feature{background:#080604;padding:26px 22px;transition:background 0.2s;}
+    .feature:hover{background:#0D0B08;}
+    .feature-num{font-size:10px;color:#2A2218;letter-spacing:0.06em;margin-bottom:14px;}
+    .feature-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#F0EAE0;margin-bottom:8px;}
+    .feature-body{font-size:11px;color:#4A3E30;line-height:1.85;}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+    .step-icon{width:38px;height:38px;border-radius:4px;border:0.5px solid #2A2218;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+    .step-num-label{font-size:10px;color:#C8A96E;letter-spacing:0.08em;margin-bottom:10px;}
+    .step-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F0EAE0;margin-bottom:8px;}
+    .step-body{font-size:11px;color:#4A3E30;line-height:1.85;}
+    .pricing-card{border:0.5px solid #2A2218;border-radius:8px;padding:36px;max-width:340px;}
+    .price-amount{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:#C8A96E;}
+    .price-unit{font-size:11px;color:#4A3E30;margin-top:4px;margin-bottom:24px;}
+    .price-features{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;}
+    .price-feat{display:flex;align-items:center;gap:10px;font-size:11px;color:#8B7060;}
+    .pf-dot{width:4px;height:4px;border-radius:50%;background:#C8A96E;flex-shrink:0;}
+    footer{padding:28px 48px;border-top:0.5px solid #1A1410;display:flex;justify-content:space-between;align-items:center;}
+    .footer-copy{font-size:11px;color:#2A2218;}
+    .footer-tag{font-size:11px;color:#2A2218;}
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){
+      nav{padding:16px 24px;}
+      .nav-links a{display:none;}
+      .hero{grid-template-columns:1fr;padding:48px 24px;}
+      .live-panel{display:none;}
+      .hl{font-size:32px;}
+      .section{padding:48px 24px;}
+      .features-grid{grid-template-columns:1fr;}
+      .steps{grid-template-columns:1fr;gap:28px;}
+      footer{padding:20px 24px;flex-direction:column;gap:8px;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <div class="logo-mark">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6" stroke="#080604" stroke-width="1.4"/>
+          <circle cx="8" cy="8" r="2.5" fill="#080604"/>
+        </svg>
+      </div>
+      <span class="logo-text">AEyes</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Product</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <button class="nav-cta">Start free trial</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow fade-in">AI-powered luxury inspection</div>
+      <div class="hero-headline fade-in">
+        <span class="hl hl-white">One walk.</span>
+        <span class="hl hl-gold">Every room.</span>
+        <span class="hl hl-white">Zero doubt.</span>
+      </div>
+      <p class="hero-body fade-in">AEyes uses GoPro video and AI to inspect every room of your luxury rental against a baseline standard and delivers a complete report before your inspector leaves the property.</p>
+      <div class="hero-actions fade-in">
+        <button class="btn-primary">Start 60-day free trial</button>
+        <button class="btn-ghost">See how it works</button>
+      </div>
+      <div class="hero-stat fade-in">
+        <div class="stat"><div class="stat-num">60</div><div class="stat-label">Day free trial</div></div>
+        <div class="stat"><div class="stat-num">$10</div><div class="stat-label">Per property / month</div></div>
+        <div class="stat"><div class="stat-num">0</div><div class="stat-label">Clipboards. Ever.</div></div>
+      </div>
+    </div>
+    <div class="live-panel fade-in">
+      <div class="panel-header">
+        <span class="panel-title">Sunset Villa — inspection in progress</span>
+        <span class="panel-live"><span class="live-dot"></span>Live</span>
+      </div>
+      <div class="room-list">
+        <div class="room-row"><span class="room-name">Master bedroom</span><span class="room-badge b-clear">Clear</span></div>
+        <div class="room-row"><span class="room-name">Master bath</span><span class="room-badge b-flag">1 flag</span></div>
+        <div class="room-row"><span class="room-name">Living room</span><span class="room-badge b-check">Checking...</span></div>
+        <div class="room-row"><span class="room-name">Kitchen</span><span class="room-badge b-pending">Pending</span></div>
+        <div class="room-row"><span class="room-name">Guest bedroom</span><span class="room-badge b-pending">Pending</span></div>
+      </div>
+      <div class="panel-flag">
+        <div class="flag-label">Flag — Master bath</div>
+        <div class="flag-desc">Towel arrangement differs from Lookbook baseline</div>
+        <div class="flag-actions">
+          <button class="flag-btn fb-fix">I fixed it</button>
+          <button class="flag-btn fb-push">Push to Breezeway</button>
+        </div>
+      </div>
+      <div class="progress-meta">
+        <span class="progress-label">Walkthrough progress</span>
+        <span class="progress-count">3 of 8 rooms</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="features">
+    <div class="section-eyebrow">What makes AEyes different</div>
+    <div class="features-grid">
+      <div class="feature fade-in"><div class="feature-num">01</div><div class="feature-title">Hands-free inspection</div><div class="feature-body">Clip a GoPro to your chest and walk. No stopping, no framing shots, no clipboards. Natural pace, complete coverage.</div></div>
+      <div class="feature fade-in"><div class="feature-num">02</div><div class="feature-title">Object-level AI</div><div class="feature-body">AEyes understands rooms, not pixels. It knows what a correctly made bed looks like, regardless of lighting or angle.</div></div>
+      <div class="feature fade-in"><div class="feature-num">03</div><div class="feature-title">Results before you leave</div><div class="feature-body">The report arrives room by room as you walk. By the time you're done, every flag is already waiting on your phone.</div></div>
+      <div class="feature fade-in"><div class="feature-num">04</div><div class="feature-title">Breezeway native</div><div class="feature-body">Push unresolved flags directly as tasks into Breezeway with one tap. No double entry, no copy-paste, no dropped balls.</div></div>
+      <div class="feature fade-in"><div class="feature-num">05</div><div class="feature-title">Tunable standards</div><div class="feature-body">Set inspection sensitivity per property. Strict for your flagship villa. Relaxed for casual turnovers. You decide.</div></div>
+      <div class="feature fade-in"><div class="feature-num">06</div><div class="feature-title">Signed off, timestamped</div><div class="feature-body">Every inspection closes with a digital sign-off. A permanent, dated record for your owners, guests, and peace of mind.</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="how">
+    <div class="section-eyebrow">How it works</div>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#C8A96E" stroke-width="0.8"/><circle cx="9" cy="9" r="3" stroke="#C8A96E" stroke-width="0.8"/></svg></div>
+        <div class="step-num-label">Step 01</div>
+        <div class="step-title">Clip on your GoPro</div>
+        <div class="step-body">Mount your GoPro, open AEyes, connect to the property WiFi, and hit Start. That's the entire setup.</div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9 Q6 5 9 9 Q12 13 15 9" stroke="#C8A96E" stroke-width="0.8" fill="none"/><circle cx="9" cy="9" r="1.5" fill="#C8A96E"/></svg></div>
+        <div class="step-num-label">Step 02</div>
+        <div class="step-title">Walk the property</div>
+        <div class="step-body">Follow your natural walkthrough. Right hand on the wall, pause two seconds per room. The GoPro captures everything.</div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="9" rx="1.5" stroke="#C8A96E" stroke-width="0.8"/><polyline points="5,9 8,12 13,7" stroke="#C8A96E" stroke-width="0.8" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="step-num-label">Step 03</div>
+        <div class="step-title">Get your report</div>
+        <div class="step-body">Flags appear room by room. Resolve, push to Breezeway, sign off. All before you leave the door.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="pricing">
+    <div class="section-eyebrow">Simple pricing</div>
+    <div class="pricing-card fade-in">
+      <div class="price-amount">$10</div>
+      <div class="price-unit">per property / per month</div>
+      <div class="price-features">
+        <div class="price-feat"><span class="pf-dot"></span>60-day free trial, no credit card required</div>
+        <div class="price-feat"><span class="pf-dot"></span>Unlimited inspections per property</div>
+        <div class="price-feat"><span class="pf-dot"></span>Full Breezeway integration</div>
+        <div class="price-feat"><span class="pf-dot"></span>Tunable AI sensitivity per property</div>
+        <div class="price-feat"><span class="pf-dot"></span>Timestamped inspection history</div>
+        <div class="price-feat"><span class="pf-dot"></span>GoPro and phone video supported</div>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:13px;">Start your free trial</button>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 AEyes</span>
+    <span class="footer-tag">Built for luxury. Priced for everyone.</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
