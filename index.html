@@ -11,81 +11,81 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{background:#080604;color:#F0EAE0;font-family:'DM Mono',monospace;overflow-x:hidden;}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-bottom:0.5px solid #2A2218;position:sticky;top:0;z-index:100;background:#080604;}
+    body{background:#FAF8F5;color:#1A1410;font-family:'DM Mono',monospace;overflow-x:hidden;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-bottom:0.5px solid #E0D8CC;background:#FAF8F5;position:sticky;top:0;z-index:100;}
     .logo{display:flex;align-items:center;gap:10px;}
-    .logo-mark{width:30px;height:30px;border-radius:6px;background:#C8A96E;display:flex;align-items:center;justify-content:center;}
-    .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F0EAE0;letter-spacing:0.08em;}
+    .logo-mark{width:30px;height:30px;border-radius:6px;background:#B89050;display:flex;align-items:center;justify-content:center;}
+    .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#1A1410;letter-spacing:0.08em;}
     .nav-links{display:flex;gap:32px;align-items:center;}
-    .nav-links a{font-size:11px;color:#6B5E4E;letter-spacing:0.06em;text-decoration:none;transition:color 0.2s;cursor:pointer;}
-    .nav-links a:hover{color:#C8A96E;}
-    .nav-cta{background:transparent;border:0.5px solid #C8A96E;color:#C8A96E;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:8px 18px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
-    .nav-cta:hover{background:#C8A96E;color:#080604;}
+    .nav-links a{font-size:12px;color:#8B7A60;letter-spacing:0.05em;text-decoration:none;cursor:pointer;transition:color 0.2s;}
+    .nav-links a:hover{color:#B89050;}
+    .nav-cta{background:transparent;border:0.5px solid #B89050;color:#B89050;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.05em;padding:8px 18px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .nav-cta:hover{background:#B89050;color:#FAF8F5;}
     .hero{padding:90px 48px 80px;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;max-width:1200px;}
-    .hero-eyebrow{font-size:10px;color:#C8A96E;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
-    .hero-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#C8A96E;}
+    .hero-eyebrow{font-size:11px;color:#B89050;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+    .hero-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#B89050;}
     .hero-headline{margin-bottom:28px;}
     .hl{display:block;font-family:'Tenor Sans',sans-serif;font-size:42px;line-height:1.08;letter-spacing:-0.01em;}
-    .hl-white{color:#F0EAE0;}
-    .hl-gold{color:#C8A96E;}
-    .hero-body{font-size:12px;color:#6B5E4E;line-height:1.9;margin-bottom:32px;max-width:400px;}
+    .hl-dark{color:#1A1410;}
+    .hl-gold{color:#B89050;}
+    .hero-body{font-size:15px;color:#5A4E40;line-height:1.9;margin-bottom:32px;max-width:400px;}
     .hero-actions{display:flex;gap:12px;align-items:center;}
-    .btn-primary{background:#C8A96E;color:#080604;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:12px 24px;border-radius:3px;cursor:pointer;border:none;transition:opacity 0.2s;}
+    .btn-primary{background:#B89050;color:#FAF8F5;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.05em;padding:12px 24px;border-radius:3px;cursor:pointer;border:none;transition:opacity 0.2s;}
     .btn-primary:hover{opacity:0.85;}
-    .btn-ghost{background:transparent;border:0.5px solid #2A2218;color:#6B5E4E;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:12px 24px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
-    .btn-ghost:hover{border-color:#6B5E4E;color:#F0EAE0;}
-    .hero-stat{display:flex;gap:32px;margin-top:44px;padding-top:32px;border-top:0.5px solid #1A1410;}
-    .stat-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#C8A96E;}
-    .stat-label{font-size:10px;color:#4A3E30;letter-spacing:0.05em;margin-top:2px;}
-    .live-panel{background:#0D0B08;border:0.5px solid #2A2218;border-radius:10px;padding:20px;}
-    .panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:0.5px solid #1A1410;}
-    .panel-title{font-size:10px;color:#6B5E4E;letter-spacing:0.06em;}
-    .panel-live{display:flex;align-items:center;gap:6px;font-size:10px;color:#C8A96E;}
-    .live-dot{width:6px;height:6px;border-radius:50%;background:#C8A96E;animation:pulse 1.8s infinite;}
+    .btn-ghost{background:transparent;border:0.5px solid #C8C0B0;color:#8B7A60;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.05em;padding:12px 24px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+    .btn-ghost:hover{border-color:#8B7A60;color:#1A1410;}
+    .hero-stat{display:flex;gap:32px;margin-top:44px;padding-top:32px;border-top:0.5px solid #E0D8CC;}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#B89050;}
+    .stat-label{font-size:11px;color:#8B7A60;letter-spacing:0.05em;margin-top:2px;}
+    .live-panel{background:#FFFFFF;border:0.5px solid #E0D8CC;border-radius:10px;padding:20px;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+    .panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:0.5px solid #E8E0D4;}
+    .panel-title{font-size:11px;color:#8B7A60;letter-spacing:0.05em;}
+    .panel-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#B89050;}
+    .live-dot{width:6px;height:6px;border-radius:50%;background:#B89050;animation:pulse 1.8s infinite;}
     @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
     .room-list{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
-    .room-row{display:flex;justify-content:space-between;align-items:center;padding:8px 11px;background:#080604;border-radius:4px;border:0.5px solid #1A1410;}
-    .room-name{font-size:12px;color:#C8BEA8;}
+    .room-row{display:flex;justify-content:space-between;align-items:center;padding:8px 11px;background:#FAF8F5;border-radius:4px;border:0.5px solid #E8E0D4;}
+    .room-name{font-size:13px;color:#1A1410;}
     .room-badge{font-size:10px;padding:2px 8px;border-radius:99px;letter-spacing:0.03em;}
-    .b-clear{background:#0D1F10;color:#4A9E60;border:0.5px solid #1A3820;}
-    .b-flag{background:#2A1008;color:#E8804A;border:0.5px solid #3A1808;}
-    .b-check{background:#1A160A;color:#C8A96E;border:0.5px solid #2A2210;}
-    .b-pending{background:#0D0B08;color:#3A3028;border:0.5px solid #1A1410;}
-    .panel-flag{background:#140C06;border:0.5px solid #3A1808;border-radius:6px;padding:11px 13px;margin-bottom:12px;}
-    .flag-label{font-size:10px;color:#E8804A;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;}
-    .flag-desc{font-size:11px;color:#8B7060;line-height:1.5;}
+    .b-clear{background:#EAF3DE;color:#3B6D11;border:0.5px solid #C8DEB0;}
+    .b-flag{background:#FDEAEA;color:#A32D2D;border:0.5px solid #E8C0B0;}
+    .b-check{background:#FEF8EC;color:#B89050;border:0.5px solid #E8D8A0;}
+    .b-pending{background:#F5F2EE;color:#8B7A60;border:0.5px solid #E0D8CC;}
+    .panel-flag{background:#FEF8F5;border:0.5px solid #E8C0B0;border-radius:6px;padding:11px 13px;margin-bottom:12px;}
+    .flag-label{font-size:10px;color:#A32D2D;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;}
+    .flag-desc{font-size:12px;color:#6B4A40;line-height:1.5;}
     .flag-actions{display:flex;gap:8px;margin-top:10px;}
-    .flag-btn{font-size:10px;font-family:'DM Mono',monospace;padding:5px 12px;border-radius:3px;cursor:pointer;border:none;letter-spacing:0.03em;}
-    .fb-fix{background:#C8A96E;color:#080604;}
-    .fb-push{background:transparent;border:0.5px solid #3A1808;color:#E8804A;cursor:pointer;}
+    .flag-btn{font-size:11px;font-family:'DM Mono',monospace;padding:5px 12px;border-radius:3px;cursor:pointer;border:none;letter-spacing:0.03em;}
+    .fb-fix{background:#B89050;color:#FAF8F5;}
+    .fb-push{background:transparent;border:0.5px solid #E8C0B0;color:#A32D2D;cursor:pointer;}
     .progress-meta{display:flex;justify-content:space-between;margin-bottom:6px;}
-    .progress-label{font-size:10px;color:#4A3E30;}
-    .progress-count{font-size:10px;color:#C8A96E;}
-    .progress-bar{height:2px;background:#1A1410;border-radius:1px;}
-    .progress-fill{height:100%;width:55%;background:#C8A96E;border-radius:1px;}
-    .section{padding:72px 48px;border-top:0.5px solid #1A1410;}
-    .section-eyebrow{font-size:10px;color:#C8A96E;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:10px;}
-    .section-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#C8A96E;}
-    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1A1410;border:0.5px solid #1A1410;border-radius:8px;overflow:hidden;}
-    .feature{background:#080604;padding:26px 22px;transition:background 0.2s;}
-    .feature:hover{background:#0D0B08;}
-    .feature-num{font-size:10px;color:#2A2218;letter-spacing:0.06em;margin-bottom:14px;}
-    .feature-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#F0EAE0;margin-bottom:8px;}
-    .feature-body{font-size:11px;color:#4A3E30;line-height:1.85;}
+    .progress-label{font-size:11px;color:#8B7A60;}
+    .progress-count{font-size:11px;color:#B89050;}
+    .progress-bar{height:2px;background:#E8E0D4;border-radius:1px;}
+    .progress-fill{height:100%;width:55%;background:#B89050;border-radius:1px;}
+    .section{padding:72px 48px;border-top:0.5px solid #E0D8CC;}
+    .section-eyebrow{font-size:11px;color:#B89050;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:10px;}
+    .section-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:#B89050;}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E0D8CC;border:0.5px solid #E0D8CC;border-radius:8px;overflow:hidden;}
+    .feature{background:#FAF8F5;padding:26px 22px;transition:background 0.2s;}
+    .feature:hover{background:#FFFFFF;}
+    .feature-num{font-size:10px;color:#C8C0B0;letter-spacing:0.06em;margin-bottom:14px;}
+    .feature-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#1A1410;margin-bottom:8px;}
+    .feature-body{font-size:14px;color:#5A4E40;line-height:1.85;}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-    .step-icon{width:38px;height:38px;border-radius:4px;border:0.5px solid #2A2218;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-    .step-num-label{font-size:10px;color:#C8A96E;letter-spacing:0.08em;margin-bottom:10px;}
-    .step-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F0EAE0;margin-bottom:8px;}
-    .step-body{font-size:11px;color:#4A3E30;line-height:1.85;}
-    .pricing-card{border:0.5px solid #2A2218;border-radius:8px;padding:36px;max-width:340px;}
-    .price-amount{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:#C8A96E;}
-    .price-unit{font-size:11px;color:#4A3E30;margin-top:4px;margin-bottom:24px;}
+    .step-icon{width:38px;height:38px;border-radius:4px;border:0.5px solid #E0D8CC;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:#FFFFFF;}
+    .step-num-label{font-size:11px;color:#B89050;letter-spacing:0.08em;margin-bottom:10px;}
+    .step-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#1A1410;margin-bottom:8px;}
+    .step-body{font-size:14px;color:#5A4E40;line-height:1.85;}
+    .pricing-card{border:0.5px solid #E0D8CC;border-radius:8px;padding:36px;max-width:340px;background:#FFFFFF;box-shadow:0 2px 20px rgba(0,0,0,0.05);}
+    .price-amount{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:#B89050;}
+    .price-unit{font-size:12px;color:#8B7A60;margin-top:4px;margin-bottom:24px;}
     .price-features{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;}
-    .price-feat{display:flex;align-items:center;gap:10px;font-size:11px;color:#8B7060;}
-    .pf-dot{width:4px;height:4px;border-radius:50%;background:#C8A96E;flex-shrink:0;}
-    footer{padding:28px 48px;border-top:0.5px solid #1A1410;display:flex;justify-content:space-between;align-items:center;}
-    .footer-copy{font-size:11px;color:#2A2218;}
-    .footer-tag{font-size:11px;color:#2A2218;}
+    .price-feat{display:flex;align-items:center;gap:10px;font-size:13px;color:#5A4E40;}
+    .pf-dot{width:4px;height:4px;border-radius:50%;background:#B89050;flex-shrink:0;}
+    footer{padding:28px 48px;border-top:0.5px solid #E0D8CC;display:flex;justify-content:space-between;align-items:center;}
+    .footer-copy{font-size:12px;color:#C8C0B0;}
+    .footer-tag{font-size:12px;color:#C8C0B0;}
     .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-in.visible{opacity:1;transform:translateY(0);}
     @media(max-width:768px){
@@ -106,8 +106,8 @@
     <div class="logo">
       <div class="logo-mark">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="8" r="6" stroke="#080604" stroke-width="1.4"/>
-          <circle cx="8" cy="8" r="2.5" fill="#080604"/>
+          <circle cx="8" cy="8" r="6" stroke="#FAF8F5" stroke-width="1.4"/>
+          <circle cx="8" cy="8" r="2.5" fill="#FAF8F5"/>
         </svg>
       </div>
       <span class="logo-text">AEyes</span>
@@ -124,9 +124,9 @@
     <div>
       <div class="hero-eyebrow fade-in">AI-powered luxury inspection</div>
       <div class="hero-headline fade-in">
-        <span class="hl hl-white">One walk.</span>
+        <span class="hl hl-dark">One walk.</span>
         <span class="hl hl-gold">Every room.</span>
-        <span class="hl hl-white">Zero doubt.</span>
+        <span class="hl hl-dark">Zero doubt.</span>
       </div>
       <p class="hero-body fade-in">AEyes uses GoPro video and AI to inspect every room of your luxury rental against a baseline standard and delivers a complete report before your inspector leaves the property.</p>
       <div class="hero-actions fade-in">
@@ -183,19 +183,19 @@
     <div class="section-eyebrow">How it works</div>
     <div class="steps">
       <div class="step fade-in">
-        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#C8A96E" stroke-width="0.8"/><circle cx="9" cy="9" r="3" stroke="#C8A96E" stroke-width="0.8"/></svg></div>
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#B89050" stroke-width="0.8"/><circle cx="9" cy="9" r="3" stroke="#B89050" stroke-width="0.8"/></svg></div>
         <div class="step-num-label">Step 01</div>
         <div class="step-title">Clip on your GoPro</div>
         <div class="step-body">Mount your GoPro, open AEyes, connect to the property WiFi, and hit Start. That's the entire setup.</div>
       </div>
       <div class="step fade-in">
-        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9 Q6 5 9 9 Q12 13 15 9" stroke="#C8A96E" stroke-width="0.8" fill="none"/><circle cx="9" cy="9" r="1.5" fill="#C8A96E"/></svg></div>
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9 Q6 5 9 9 Q12 13 15 9" stroke="#B89050" stroke-width="0.8" fill="none"/><circle cx="9" cy="9" r="1.5" fill="#B89050"/></svg></div>
         <div class="step-num-label">Step 02</div>
         <div class="step-title">Walk the property</div>
         <div class="step-body">Follow your natural walkthrough. Right hand on the wall, pause two seconds per room. The GoPro captures everything.</div>
       </div>
       <div class="step fade-in">
-        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="9" rx="1.5" stroke="#C8A96E" stroke-width="0.8"/><polyline points="5,9 8,12 13,7" stroke="#C8A96E" stroke-width="0.8" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="step-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="9" rx="1.5" stroke="#B89050" stroke-width="0.8"/><polyline points="5,9 8,12 13,7" stroke="#B89050" stroke-width="0.8" fill="none" stroke-linecap="round"/></svg></div>
         <div class="step-num-label">Step 03</div>
         <div class="step-title">Get your report</div>
         <div class="step-body">Flags appear room by room. Resolve, push to Breezeway, sign off. All before you leave the door.</div>
@@ -233,4 +233,3 @@
   </script>
 </body>
 </html>
-
